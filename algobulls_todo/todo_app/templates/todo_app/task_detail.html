@@ -1,0 +1,19 @@
+<!-- todolist/templates/todolist/task_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Detail</title>
+</head>
+<body>
+    <h2>Task Detail</h2>
+    <p><strong>Title:</strong> {{ task.title }}</p>
+    <p><strong>Description:</strong> {{ task.description }}</p>
+    <p><strong>Due Date:</strong> {{ task.due_date }}</p>
+    <p><strong>Status:</strong> {{ task.get_status_display }}</p>
+    <!-- Add more details as needed -->
+
+    <!-- Link to go back to the task list -->
+    <a href="{% url 'update_task' task.id %}">Edit</a>
+    <a href="{% url 'task_list'%}">Back to Task List</a>
+</body>
+</html>

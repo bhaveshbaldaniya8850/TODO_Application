@@ -1,0 +1,33 @@
+{% comment %} <h3>Hello world  see your todo here</h3>
+{% for task in tasks %}
+    <div>
+        <p>{{task}}<p>
+    </div>
+{% endfor %} {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h2>Task List</h2>
+
+    <!-- Display existing tasks -->
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }}
+                (<a href="{% url 'view_task' task.id %}">View</a>)
+                (<a href="{% url 'update_task' task.id %}">Edit</a>)
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Link to create a new task -->
+    <button type="button" class="btn btn-outline-primary"><a href="{% url 'create_task' %}">Create New Task</a></button>
+    
+</body>
+</html>
