@@ -13,8 +13,8 @@ class TodoDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TodoSerializer
 
-#example
+# #example
 @api_view(['GET'])
 def getdata(request):
-    dummy = {'name' : 'task0', 'tag':'urgent'}
+    dummy = {'Message' : 'Pass the api with appropriate value', 'Action':'Retry'}
     return Response(dummy)

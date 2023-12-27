@@ -54,7 +54,7 @@ def create_task(request):
                 # Task created successfully, redirect to the task list
                 return redirect('task_list')
             else:
-                # Handle error, you might want to show an error message to the user
+                # error Handling
                 pass
     else:
         form = TaskForm()
@@ -81,7 +81,7 @@ def update_task(request, task_id):
     if response.status_code == 200:
         task_data = response.json()
     else:
-        # Handle error, you might want to show an error message to the user
+        # error Handling
         task_data = {}
 
     if request.method == 'POST':
@@ -97,7 +97,7 @@ def update_task(request, task_id):
             update_data = {
                 'title': cleaned_data['title'],
                 'description': cleaned_data['description'],
-                'due_date': cleaned_data['due_date'],  # Serialize date to string
+                'due_date': cleaned_data['due_date'],
                 'tags': tags_list,
                 'status': cleaned_data.get('status', 'OPEN'),
             }
@@ -108,7 +108,7 @@ def update_task(request, task_id):
                 # Task updated successfully, redirect to the task list
                 return redirect('task_list')
             else:
-                # Handle error, you might want to show an error message to the user
+                # error Handling
                 pass
     else:
         form = TaskForm(initial=task_data)
@@ -137,7 +137,7 @@ def view_task(request, task_id):
     if response.status_code == 200:
         task = response.json()
     else:
-        # Handle error, you might want to show an error message to the user
+        # error Handling
         task = {}
 
     # Render the task_detail.html template with the task data
@@ -157,7 +157,7 @@ def delete_task(request, task_id):
     if response.status_code == 200:
         task_data = response.json()
     else:
-        # Handle error, you might want to show an error message to the user
+        # error Handling
         task_data = {}
 
     delete_response = requests.delete(api_url)
@@ -167,7 +167,7 @@ def delete_task(request, task_id):
         # Task deleted successfully, redirect to the task list
         return redirect('task_list')
     else:
-        # Handle error, you might want to show an error message to the user
+        # error Handling
         pass
 
     return render(request, 'todo_app/task_list.html', {'task': task_data})
