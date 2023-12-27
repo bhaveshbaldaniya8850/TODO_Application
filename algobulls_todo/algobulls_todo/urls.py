@@ -25,4 +25,5 @@ urlpatterns = [
     path('create/', include('todo_app.urls')),
     path('update/<int:task_id>/', include('todo_app.urls')),
     path('view/<int:task_id>/', include('todo_app.urls')),
+    path('delete/<int:task_id>/', include('todo_app.urls')),
 ]

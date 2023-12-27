@@ -22,12 +22,16 @@
                 {{ task.title }}
                 (<a href="{% url 'view_task' task.id %}">View</a>)
                 (<a href="{% url 'update_task' task.id %}">Edit</a>)
+                (<a href="{% url 'delete_task' task.id %}">Delete</a>)
             </li>
         {% endfor %}
     </ul>
 
     <!-- Link to create a new task -->
     <button type="button" class="btn btn-outline-primary"><a href="{% url 'create_task' %}">Create New Task</a></button>
-    
+   {% comment %} <br>
+    <div class="form-group">
+        <p1>testcase {{tasks}}</p1>
+    </div> {% endcomment %}
 </body>
 </html>

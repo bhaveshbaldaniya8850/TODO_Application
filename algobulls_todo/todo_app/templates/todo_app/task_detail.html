@@ -14,6 +14,8 @@
 
     <!-- Link to go back to the task list -->
     <a href="{% url 'update_task' task.id %}">Edit</a>
+    <a href="{% url 'delete_task' task.id %}">Delete</a>
+    <br>
     <a href="{% url 'task_list'%}">Back to Task List</a>
 </body>
 </html>
