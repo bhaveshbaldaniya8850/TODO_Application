@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "454f39a4-9d67-4647-a8ce-9bdc4bce94cd",
+		"name": "CRUD api testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31991348"
+	},
+	"item": [
+		{
+			"name": "Read all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/todos/"
+			},
+			"response": []
+		},
+		{
+			"name": "Read one",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/todos/3"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/todos/10"
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"First task\",\"description\":\"here all task will added with description\",\"due_date\":\"2023-12-25\",\"status\":\"WORKING\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "tags",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "Postman Task",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "post method on api will be executed",
+							"disabled": true
+						},
+						{
+							"key": "due_date",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"PostMan task\",\"description\":\"here all task will added with description\",\"due_date\":\"2023-12-25\",\"status\":\"WORKING\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/10/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"10",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "poatman task",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
