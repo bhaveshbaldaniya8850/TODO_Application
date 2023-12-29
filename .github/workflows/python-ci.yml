@@ -53,9 +53,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Adjust based on your project structure and dependencies
 
-    - name: Run Flake8
+    - name: Run Flake8 
       run: |
-        flake8
+        flake8 --exclude=./venv
 
     - name: Run Black
       run: |
