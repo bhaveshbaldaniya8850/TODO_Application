@@ -53,6 +53,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Adjust based on your project structure and dependencies
 
+    - name: Auto-format with autopep8
+      run: |
+        pip install autopep8
+        autopep8 --recursive --in-place --exclude=venv .
+    - name: Auto-format with black
+      run: |
+        pip install black
+        black .
+
     - name: Run Flake8 
       run: |
         flake8 --exclude=./venv
