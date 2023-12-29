@@ -25,6 +25,7 @@ jobs:
     
     - name: Debug
       run: |
+        ls -R
         ls -R api
     
     - name: Run unit tests
