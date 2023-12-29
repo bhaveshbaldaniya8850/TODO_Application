@@ -25,11 +25,11 @@ jobs:
 
     - name: Run unit tests
       run: |
-        python -m unittest discover tests/unit
+        python -m unittest discover api/tests
 
     - name: Run integration tests
       run: |
-        python -m unittest discover tests/integration
+        python -m unittest discover todo_app/tests
 
   lint:
     runs-on: ubuntu-latest
