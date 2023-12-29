@@ -12,3 +12,5 @@ python manage.py migrate
 
 python manage.py runserver
  install rest_framework
+
+pip install djangorestframework
