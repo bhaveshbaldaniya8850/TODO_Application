@@ -55,7 +55,7 @@ jobs:
 
     - name: Run Flake8 
       run: |
-        flake8
+        flake8 --exclude=./venv
 
     - name: Auto-format with black
       run: |
