@@ -55,7 +55,7 @@ jobs:
 
     - name: Run Flake8 
       run: |
-        flake8 --exclude=./venv
+        flake8 --exclude= .git, __pycache__, ./venv
 
     - name: Auto-format with black
       run: |
