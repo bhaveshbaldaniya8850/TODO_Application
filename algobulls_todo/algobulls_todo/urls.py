@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = "AlgoBulls Admin"
+admin.site.site_title = "TODO App Admin Portal"
+admin.site.index_title = "Welcome to AlgoBulls TODO App Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
@@ -26,4 +30,9 @@ urlpatterns = [
     path('update/<int:task_id>/', include('todo_app.urls')),
     path('view/<int:task_id>/', include('todo_app.urls')),
     path('delete/<int:task_id>/', include('todo_app.urls')),
+    # path("signup", include('todo_app.urls')),
+    # path("login", include('todo_app.urls')),
+    # path("logout", include('todo_app.urls')),
+    # path("notauthenticated", include('todo_app.urls')),
+
 ]
