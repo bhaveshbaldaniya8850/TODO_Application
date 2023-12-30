@@ -121,7 +121,7 @@
         </div>
       </div>
     </div>
-  
+    
       <!-- Button to trigger SignUp modal -->
       {% if user.is_authenticated %}
   
@@ -148,9 +148,39 @@
     </nav>
 
     
-    <h2>Task List</h2>
+    {% comment %} <h2>Task List</h2> {% endcomment %}
+    <br>
+    {% comment %} <button type="button" class="btn btn-outline-primary"><a href="{% url 'create_task' %}">Create New Task</a></button><br><br> {% endcomment %}
+    <div class="container text-center">
+      <div class="row" style="background-color: #fcff5f;border:  1px solid #b3d7ff; border-radius: 10px;">
+        <div class="col col-lg-4">
+          <p1>Title</p1>
+        </div>
+        <div class="col col-lg-4">
+          Status
+        </div>
+        <div class="col-md-auto">
+          Actions
+        </div> 
+    </div>
 
-    <!-- Display existing tasks -->
+      {% for task in tasks %}
+      <div class="row" style="background-color: #cce5ff;border:  1px solid #b3d7ff; border-radius: 10px;">
+          <div class="col col-lg-4">
+            <p1>{{ task.title }} </p1>
+          </div>
+          <div class="col col-lg-4">
+            {{ task.status }}
+          </div>
+          <div class="col-md-auto">
+            (<a href="{% url 'view_task' task.id %}">View</a>)
+            (<a href="{% url 'update_task' task.id %}">Edit</a>)
+            (<a href="{% url 'delete_task' task.id %}">Delete</a>)
+          </div> 
+      </div>
+      {% endfor %}
+  </div>
+    {% comment %} <!-- Display existing tasks -->
     <ul>
         {% for task in tasks %}
             <li>
@@ -160,9 +190,8 @@
                 (<a href="{% url 'delete_task' task.id %}">Delete</a>)
             </li>
         {% endfor %}
-    </ul>
+    </ul> {% endcomment %}
 
     <!-- Link to create a new task -->
-    <button type="button" class="btn btn-outline-primary"><a href="{% url 'create_task' %}">Create New Task</a></button>
 </body>
 </html>
