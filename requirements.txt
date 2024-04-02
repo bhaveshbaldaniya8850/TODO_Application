@@ -1,4 +1,4 @@
-Django==3.2.10
+Django==3.2.11
 requests==2.26.0
 flake8==4.0.1
 black==21.12b0
